@@ -24,3 +24,6 @@ export const filterSlice = createSlice({
     },
   },
 });
+
+export const { setQuery, setStatus, clearFilter } = filterSlice.actions;
+
