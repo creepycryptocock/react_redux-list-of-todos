@@ -18,14 +18,14 @@ export const App = () => {
 
         dispatch(todosSlice.actions.setTodos(todos));
       } catch {
-        setIsLoading(false);
+        return 'Something went wrong';
       } finally {
         setIsLoading(false);
       }
     }
 
     fetchTodos();
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
@@ -40,7 +40,7 @@ export const App = () => {
 
             <div className="block">
               {isLoading && <Loader />}
-              <TodoList />
+              { !isLoading && <TodoList />}
             </div>
           </div>
         </div>

@@ -4,8 +4,9 @@ import { setQuery, setStatus, clearFilter } from '../../features/filter';
 
 export const TodoFilter: React.FC = () => {
   const dispatch = useAppDispatch();
-  const status = useAppSelector(state => state.filter.status);
-  const query = useAppSelector(state => state.filter.query);
+  const {status, query} = useAppSelector(state => state.filter);
+  // const status = useAppSelector(state => state.filter.status);
+  // const query = useAppSelector(state => state.filter.query);
 
   return (
     <form
@@ -49,12 +50,6 @@ export const TodoFilter: React.FC = () => {
               onClick={() => dispatch(clearFilter())}
             />
           )}
-          {/* <button
-            data-cy="clearSearchButton"
-            type="button"
-            className="delete"
-            onClick={() => dispatch(clearFilter())}
-          /> */}
         </span>
       </p>
     </form>

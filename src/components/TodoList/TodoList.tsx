@@ -16,10 +16,6 @@ export const TodoList: React.FC = () => {
     let matchQuery = query ? todo.title.toLowerCase().includes(query.toLowerCase()) : true;
     let matchFilter;
 
-    // if (query) {
-    //   matchQuery = todo.title.includes(query);
-    // }
-
     switch (status) {
       case 'active': {
         matchFilter = !todo.completed;
@@ -40,7 +36,8 @@ export const TodoList: React.FC = () => {
 
   return (
     <>
-      {visibleTodos.length > 0 ? <table className="table is-narrow is-fullwidth">
+      {visibleTodos.length > 0 ? (
+        <table className="table is-narrow is-fullwidth">
         <thead>
           <tr>
             <th>#</th>
@@ -79,9 +76,12 @@ export const TodoList: React.FC = () => {
           </tr>
           ))}
         </tbody>
-      </table>:  <p className="notification is-warning">
+      </table>
+      ) : (
+        <p className="notification is-warning">
         There are no todos matching current filter criteria
-      </p>}
+      </p>
+    )}
     </>
   );
 };
