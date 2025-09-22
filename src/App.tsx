@@ -40,7 +40,7 @@ export const App = () => {
 
             <div className="block">
               {isLoading && <Loader />}
-              { !isLoading && <TodoList />}
+              <TodoList isLoading={isLoading} />
             </div>
           </div>
         </div>

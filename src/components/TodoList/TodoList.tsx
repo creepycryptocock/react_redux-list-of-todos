@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks';
 import { setCurrentTodo } from '../../features/currentTodo';
 
 
-export const TodoList: React.FC = () => {
+export const TodoList: React.FC = ({isLoading}) => {
   const todos = useAppSelector(state => state.todos);
   const filter = useAppSelector(state => state.filter);
   const query = filter.query;
@@ -78,7 +78,7 @@ export const TodoList: React.FC = () => {
         </tbody>
       </table>
       ) : (
-        <p className="notification is-warning">
+        !isLoading && <p className="notification is-warning">
         There are no todos matching current filter criteria
       </p>
     )}

@@ -4,7 +4,7 @@ import { setQuery, setStatus, clearFilter } from '../../features/filter';
 
 export const TodoFilter: React.FC = () => {
   const dispatch = useAppDispatch();
-  const {status, query} = useAppSelector(state => state.filter);
+  const { status, query } = useAppSelector(state => state.filter);
   // const status = useAppSelector(state => state.filter.status);
   // const query = useAppSelector(state => state.filter.query);
 
